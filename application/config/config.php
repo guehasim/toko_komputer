@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://192.168.1.22:8080/open_loker';
-$config['base_url'] = 'http://localhost/toko_komputer';
+$root 					= stripos($_SERVER['SERVER_PROTOCOL'], 'https') === 0 ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'];
+$root 					.= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+$config['base_url']    	= "$root";
 
 /*
 |--------------------------------------------------------------------------
